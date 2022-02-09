@@ -41,7 +41,14 @@
     <tr>
       <td>2021.02.09</td>
       <td>Reactive Programming 공부하기</td>
-      <td>reactive programming</td>
+      <td>Iterable, Observable, Observer, Reactive Streams, Subscription</td>
+      <td>webflux 적용 시 기본개념의 부족함을 느낌</td>
+      <td>https://github.com/Pawer0223/study_codes/tree/main/reactive_programming</td>
+    </tr>
+    <tr>
+      <td>2021.02.10</td>
+      <td>Reactive Programming 공부하기 - 2</td>
+      <td>key words ...</td>
       <td>webflux 적용 시 기본개념의 부족함을 느낌</td>
       <td></td>
     </tr>
