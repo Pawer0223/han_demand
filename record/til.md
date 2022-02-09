@@ -14,7 +14,7 @@
     <tr>
       <td>2021.02.06</td>
       <td>채팅 서버 구현 방식 공부</td>
-      <td>sse, websocekt</td>
+      <td>SSE, WebsSocket</td>
       <td>채팅 서버 구현을 위한 방법 찾기</td>
       <td></td>
     </tr>
@@ -32,7 +32,7 @@
     <tr>
       <td>2021.02.08</td>
       <td>WebSocket 구현</td>
-      <td>WebSocket, sockJS, STOMP</td>
+      <td>WebSocket, sockJS, Stomp</td>
       <td>SSE vs WebSocket 비교</td>
       <td>
         <a target='_blank' href="https://github.com/Pawer0223/study_codes/tree/main/websocket_practice">link1</a>
@@ -49,7 +49,7 @@
     </tr>
     <tr>
       <td>2021.02.10</td>
-      <td>Reactive Programming 공부하기 - 2</td>
+      <td>Reactive Programming 공부하기(2)</td>
       <td>key words ...</td>
       <td>webflux 적용 시 기본개념의 부족함을 느낌</td>
       <td></td>
