@@ -49,6 +49,8 @@
   
 # Reference 3 - Webflux + WebSocket
 
+- [참조](https://www.baeldung.com/spring-5-reactive-websockets)
+
 
 
 # 공부가 필요 부분
