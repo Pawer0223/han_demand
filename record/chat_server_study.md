@@ -1,8 +1,8 @@
 # Contents
-- [WebSocket vs SSE](https://github.com/Pawer0223/han_demand/edit/main/record/chat_server_study.md#WebSocket-vs-SSE)
-- [멀티 스레드 동기 vs 싱글 스레드 비동기](https://github.com/Pawer0223/han_demand/edit/main/record/chat_server_study.md#멀티-스레드-동기-vs-싱글-스레드-비동기)
-- [pub/sub 모델](https://github.com/Pawer0223/han_demand/edit/main/record/chat_server_study.md#pub/sub-모델)
-- [WebFlux](https://github.com/Pawer0223/han_demand/edit/main/record/chat_server_study.md#WebFlux)
+- [WebSocket vs SSE](https://github.com/Pawer0223/han_demand/main/record/chat_server_study.md#WebSocket-vs-SSE)
+- [멀티 스레드 동기 vs 싱글 스레드 비동기](https://github.com/Pawer0223/han_demand/main/record/chat_server_study.md#멀티-스레드-동기-vs-싱글-스레드-비동기)
+- [pub/sub 모델](https://github.com/Pawer0223/han_demand/main/record/chat_server_study.md#pub/sub-모델)
+- [WebFlux](https://github.com/Pawer0223/han_demand/main/record/chat_server_study.md#WebFlux)
 
 ## WebSocket vs SSE
 
