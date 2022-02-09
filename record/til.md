@@ -35,7 +35,7 @@
       <td>WebSocket, sockJS, STOMP</td>
       <td>SSE vs WebSocket 비교</td>
       <td>
-        <a href="https://github.com/Pawer0223/study_codes/tree/main/websocket_practice" target='_blank'>link1</a>
+        <a target='_blank' href="https://github.com/Pawer0223/study_codes/tree/main/websocket_practice">link1</a>
       </td>
     </tr>
     <tr>
@@ -44,21 +44,6 @@
       <td>reactive programming</td>
       <td>webflux 적용 시 기본개념의 부족함을 느낌</td>
       <td></td>
-    </tr>
-  </table>
-</details>
-
-
-<details open>
-<summary>til sample format</summary>
-  <table>
-    <th>Day</th><th>Content</th><th>Keyword</th><th>Why?</th><th>Trace</th>
-    <tr>
-      <td>yyyy.mm.dd</td>
-      <td>content ...</td>
-      <td>keywords ... </td>
-      <td>why?</td>
-      <td>trace...</td>
     </tr>
   </table>
 </details>
