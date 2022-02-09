@@ -54,6 +54,3 @@
 # 공부가 필요 부분
 
 - [정리 링크](https://github.com/Pawer0223/han_demand/blob/main/record/chat_server_study.md)
-- WebSocket vs SSE
-- 멀티 스레드 동기 vs 싱글 스레드 비동기
-- WebFlux
