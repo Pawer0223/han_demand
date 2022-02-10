@@ -50,9 +50,11 @@
     <tr>
       <td>2021.02.10</td>
       <td>Reactive Programming 공부하기(2)</td>
-      <td>key words ...</td>
-      <td>webflux 적용 시 기본개념의 부족함을 느낌</td>
-      <td></td>
+      <td>Operator</td>
+      <td>webflux 이해하기</td>
+      <td>
+        <a target='_blank' href="https://github.com/Pawer0223/study_codes/blob/main/reactive_programming/readme.md#operators">link1</a>
+      </td>
     </tr>
   </table>
 </details>
