@@ -68,9 +68,9 @@
     <tr>
       <td>2021.02.12</td>
       <td>Chating Server Architecture</td>
-      <td>아, 근데 사실 왜 비동기로 처리하는게 좋은건지.. 제대로 이해를 못하고 있다. 채팅 서버 구현이 아닌, Architecture의 Reference를 다시 찾아보자..</td>
+      <td>keywords...</td>
       <td>
-        keywords..
+        아, 근데 사실 왜 비동기로 처리하는게 좋은건지.. 제대로 이해를 못하고 있다. 채팅 서버 구현이 아닌, Architecture의 Reference를 다시 찾아보자..
       </td>
       <td>
         <a target='_blank' href="">link1</a>
