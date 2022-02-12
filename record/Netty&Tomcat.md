@@ -1,8 +1,6 @@
 # Ref
 - [Netty vs Tomcat 참조 블로그](https://ooeunz.tistory.com/109)
 - [메시지 큐 참조 블로그](https://12bme.tistory.com/176)
-- [토비님 강의 1:24:47 부터 - 비동기 이해하는데 아주 좋네. 기가막힌다](https://www.youtube.com/watch?v=aSTuQiPB4Ns&list=PLOLeoJ50I1kkqC4FuEztT__3xKSfR2fpw&index=4)
-
 
 # Netty의 장점
 - Netty는 단일 쓰레드 비동기 처리.
