@@ -68,14 +68,24 @@
     <tr>
       <td>2021.02.12</td>
       <td>Chating Server Architecture</td>
-      <td>keywords...</td>
+      <td>Asynchronus, WorkThread, DefeeredResult Queue, Emitter</td>
       <td>
-        <li>아, 근데 사실 왜 비동기로 처리하는게 좋은건지.. 제대로 이해를 못하고 있다. 채팅 서버 구현이 아닌, Architecture의 Reference를 다시 찾아보자..</li>
-        <li>아! 비동기 처리는 필수네?, Tomcat + 웹소켓방식해도 메시지 지향 미들웨어(MOM, 메시지 큐!)를 사용하는구나..</li>
-        <li>결론: 그럼, 네트워크 레벨은 Netty의 도움을 받아서 좀 더 빠르게 진행하자.</li>
+        <li>아, 근데 사실 왜 비동기로 처리하는게 좋은건지.. 제대로 이해를 못하고 있다..</li>
+        <li>Netty를 사용하려는 이유: 네트워크에 대한 처리는 서버에 최대한 맡기고, 최대한 비즈니스로직에 집중하자.</li>
       </td>
       <td>
-        <a target='_blank' href="">link1</a>
+        <a target='_blank' href="https://github.com/Pawer0223/han_demand/blob/main/record/Netty%26Tomcat.md">link1</a>
+      </td>
+    </tr>
+    <tr>
+      <td>2021.02.13</td>
+      <td>Reactive Programming 공부하기</td>
+      <td>keywords...</td>
+      <td>
+        다시 webflux 이해하기
+      </td>
+      <td>
+        <a target='_blank' href=""></a>
       </td>
     </tr>
   </table>
