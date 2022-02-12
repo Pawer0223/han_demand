@@ -21,9 +21,7 @@
 
 - Netty 내부적으로 결국 다수의 worker스레드로 동작한다면, 여러개의 쓰레드를 다루기 때문에 컨텍스트 스위칭이 자주 일어나는것은 똑같지 않나???
   - 결국 여러개의 쓰레드가 동작하는 방식이라면.. 근본적인 문제는 해결안되는거 아닌가...
- 
-### 서블릿의 비동기 처리방식부터.. 이해해보자
-- [참조](https://github.com/Pawer0223/study_codes/blob/main/reactive_programming/record/Asynchronous.md)
+  - Answer: [강의를 통해 비동기 처리를 이해해보자, 도움이 된다 !](https://github.com/Pawer0223/study_codes/blob/main/reactive_programming/record/Asynchronous.md)
 
 # 그럼 무조건 Netty 써야 하는가 ?
 - 아니다.
