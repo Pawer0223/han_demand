@@ -58,6 +58,7 @@
 
 ### (중요* 핵심*) DeferredResult 큐??
 <img width="695" alt="image" src="https://user-images.githubusercontent.com/26343023/153714784-61c8bbb6-5722-41b1-b610-0bbefb8eebd8.png">
+
 - DeferredResult는 요청에 대한 작업을 수행하지 않고 대기하다가.. 외부에서 발생하는 이벤트에 의해 작업을 수행한 후 결과를 한번에 써준다.
   - 장점?
   - DeferredResult로 어떠한 Object를 keep하고 있다면, 만약 10개의 요청을 각각 DeferredResult에 담아두고있다가 한꺼번에 결과를 출력할 수 있다. 혹은 하나씩도 가능.
@@ -68,6 +69,17 @@
     - 가장 큰 특징은 별도의 WorkThread를 따로만들지 않는다는 것 !
     - Event Driven이나 비동기 처리할때 굉장히 유용.
 
+- 100개의 요청을 1개의 쓰레드로 끝내버렸다.
+  - 받고 리턴, 받고 리턴, 받고 리턴 .. 하면서 1개의 쓰레드로 모든 요청을 받았고
+  - DeferredResult에서 연결을 유지하고 있기 때문에 별도의 Work Thread를 생성하지도 않고 이벤트가 발생할 때 리턴할 수 있다. (Wow!)
+
+- DeferredResult + Non Blocking I/O로 서버의 자원을 최소화 하면서 많은 양의 작업을 수행할 수 있다..
+
+ ### Emitter
+ 
+ - 한번의 요청에, 여러번의 응답을 보낼 수 있도록 할 수 있다.
+ - 한번의 요청에 여러번 `emiiter.send`를 보낼 수 있다.
+ - SSE표준을 따라 데이터를 streaming방식으로 response한다.
 
 # 그럼 무조건 Netty 써야 하는가 ?
 - 아니다.
