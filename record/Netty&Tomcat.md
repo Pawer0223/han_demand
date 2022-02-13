@@ -30,3 +30,20 @@
   - 서로 다른 프로세스나 프로그램 사이에 메시지를 교환할 때 AMQP(Advanced Message Queuing Protocol)을 이용. 
     - AMQP는 메시지 지향 미들웨어를 위한 open standard application layer protocol.
   - 오픈소스 메시지 큐로는 RabbitMQ, ActiveMQ, ZeroMQ, Kafka등이 있다.
+
+# Netty와 Tomcat의 차이 좀 더 깊이있게
+
+### AsyncRestTemplate
+
+- [Reference](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/AsyncRestTemplate.html)
+- 스프링 4 부터는 AsyncRestTemplate를 이용해 클라이언트의 요청을 비동기로 처리할 수 있다.
+- AsyncRestTemplate을 사용해서 새로운 WorkerThread를 만들어서 요청을 처리한다는 것이다.
+- 하지만 문제가 있다. 한번에 쓰레드 요청이 몰릴 수 있다는 것. Thread Hell이 발생할 수 있다.
+  - 100개의 요청이들어오면, `순간적으로 100개의 쓰레드가 만들어진다.`
+
+### AsyncRestTemplate - Netty4ClientHttpRequestFactory
+
+- AsyncRestTemplate을 Netty서버를 사용하도록 생성할 수 있다.
+- 결과부터 얘기하면 AsyncRestTemplate을 Netty서버로 동작시키고 100개의 요청을 받으면, 훨씬 적은 Work Thread를 생성해서 처리가 가능하다.
+- 즉, WorkThread의 생성 갯수를 줄일 수 있다.
+
