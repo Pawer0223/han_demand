@@ -80,12 +80,12 @@
     <tr>
       <td>2021.02.13</td>
       <td>Reactive Programming 공부하기</td>
-      <td>keywords...</td>
+      <td>CompletableFuture, ... </td>
       <td>
         다시 webflux 이해하기
       </td>
       <td>
-        <a target='_blank' href=""></a>
+        <a target='_blank' href="https://github.com/Pawer0223/study_codes/blob/main/reactive_programming/record/Asynchronous.md#completablefuture"></a>
       </td>
     </tr>
   </table>
