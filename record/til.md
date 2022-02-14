@@ -85,7 +85,7 @@
         다시 webflux 이해하기
       </td>
       <td>
-        <a target='_blank' href="https://github.com/Pawer0223/study_codes/blob/main/reactive_programming/record/Asynchronous.md#completablefuture"></a>
+        <a target='_blank' href="https://github.com/Pawer0223/study_codes/blob/main/reactive_programming/record/WebFlux.md">link1</a>
       </td>
     </tr>
   </table>
