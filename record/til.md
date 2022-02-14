@@ -90,3 +90,25 @@
     </tr>
   </table>
 </details>
+
+<details>
+<summary>week 2</summary>
+  <table>
+    <th>Day</th><th>Content</th><th>Keyword</th><th>Why?</th><th>Trace</th>
+    <tr>
+      <td>2021.02.14</td>
+      <td>MongoDB 걷어내기</td>
+      <td></td>
+      <td>비동기 DB 사용 -> 컬렉션 사용으로 변경하기</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2021.02.15</td>
+      <td>MongoDB 걷어내기</td>
+      <td>keywords...</td>
+      <td>비동기 DB 사용 -> 컬렉션 사용으로 변경하기</td>
+      <td></td>
+    </tr>
+  </table>
+</details>
+
