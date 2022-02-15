@@ -105,7 +105,7 @@
     <tr>
       <td>2021.02.15</td>
       <td>MongoDB 걷어내기</td>
-      <td>keywords...</td>
+      <td>tailable</td>
       <td>비동기 DB 사용 -> 컬렉션 사용으로 변경하기</td>
       <td><a target='_blank' href="https://github.com/Pawer0223/han_demand/tree/main/record/RemoveMongo.md">link1</a></td>
     </tr>
