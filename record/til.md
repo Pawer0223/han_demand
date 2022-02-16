@@ -109,6 +109,13 @@
       <td>비동기 DB 사용 -> 컬렉션 사용으로 변경하기</td>
       <td><a target='_blank' href="https://github.com/Pawer0223/han_demand/tree/main/record/RemoveMongo.md">link1</a></td>
     </tr>
+    <tr>
+      <td>2021.02.16</td>
+      <td>먼저 Security관련 코드적용시켜놓고 시작하기</td>
+      <td>spring security</td>
+      <td>외부 시스템 or 직접 적용 ?</td>
+      <td><a target='_blank' href=""></a></td>
+    </tr>
   </table>
 </details>
 
