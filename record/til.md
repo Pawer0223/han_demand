@@ -116,6 +116,15 @@
       <td>외부 시스템 or 직접 적용 ?</td>
       <td><a target='_blank' href=""></a></td>
     </tr>
+    <tr>
+      <td>2021.02.17</td>
+      <td>기본 코드 틀 잡아놓기.</td>
+      <td>keywords ..</td>
+      <td>
+        <li>security 직접 적용 - 일단 만들어놓자.</li>
+      </td>
+      <td><a target='_blank' href=""></a></td>
+    </tr>
   </table>
 </details>
 
