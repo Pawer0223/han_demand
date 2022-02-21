@@ -120,10 +120,16 @@
       <td>2021.02.17</td>
       <td>기본 코드 틀 잡아놓기.</td>
       <td>keywords ..</td>
-      <td>
-        <li>security 직접 적용 - 일단 만들어놓자.</li>
-      </td>
+      <td>security 직접 적용 - 일단 만들어놓자.</td>
       <td><a target='_blank' href=""></a></td>
+    </tr>
+    <tr>
+      <td>2021.02.18</td>
+      <td>security 적용 도메인 분석</td>
+      <td>keywords ..</td>
+      <td>security 적용 - 코드분석 및 간단 정리하기</li>
+      </td>
+      <td><a target='_blank' href="https://github.com/Pawer0223/han_demand/tree/main/user_service"></a>user-service</td>
     </tr>
   </table>
 </details>
