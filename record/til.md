@@ -119,17 +119,31 @@
     <tr>
       <td>2021.02.17</td>
       <td>기본 코드 틀 잡아놓기.</td>
-      <td>keywords ..</td>
+      <td></td>
       <td>security 직접 적용 - 일단 만들어놓자.</td>
       <td><a target='_blank' href=""></a></td>
     </tr>
     <tr>
       <td>2021.02.18</td>
       <td>security 적용 도메인 분석</td>
-      <td>keywords ..</td>
+      <td></td>
       <td>security 적용 - 코드분석 및 간단 정리하기</li>
       </td>
-      <td><a target='_blank' href="https://github.com/Pawer0223/han_demand/tree/main/user_service"></a>user-service</td>
+      <td><a target='_blank' href="https://github.com/Pawer0223/han_demand/tree/main/user_service"></a></td>
+    </tr>
+    <tr>
+      <td>2021.02.21</td>
+      <td>
+        <li>MSA 구축</li>
+        <li>Security Filter를 API Gateway로 변경하기.</li>
+      </td>
+      <td>Discovery-Server, API-Gateway</td>
+      <td>
+        <li>채팅 서버 어플리케이션의 아키텍처를 따로 구축하고 싶었기 때문에.</li>
+        <li>API-Gateway: 인증 및 인가에 대한 부분을 공통으로 필터링하고, 각 MSA를 호출</li>
+        <li>Discovery-Server: 각 MSA의 정보를 등록하고, API-Gateway에서 Discovery</li>
+      </td>
+      <td><a target='_blank' href=""></a></td>
     </tr>
   </table>
 </details>
