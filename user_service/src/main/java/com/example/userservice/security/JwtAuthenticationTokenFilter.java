@@ -100,7 +100,6 @@ public class JwtAuthenticationTokenFilter extends GenericFilterBean {
                 log.error(e.getMessage(), e);
             }
         }
-
         return null;
     }
 

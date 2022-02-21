@@ -2,7 +2,7 @@ spring:
   main:
     allow-circular-references: true
   application:
-    name: programmers spring assignments
+    name: user-service
   messages:
     basename: i18n/messages
     encoding: UTF-8
@@ -23,12 +23,20 @@ spring:
   sql:
     init:
       platform: h2
+
 server:
-  port: 5001
+  port: 9001
 
 jwt:
   token:
     header: X-HAN-DEMAND-AUTH
-    issuer: programmers_taesan
-    client-secret: N_GOLO_KANG_TAE
+    issuer: N_GOLO_KANG_TAE
+    client-secret: BBAL_RAL_RA_RAL_RA
     expiry-seconds: 0
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true # eureka 서버로부터 인스턴스들의 정보를 주기적으로 가져올 것인지 설정. (갱신 된 정보를 받겠다.)
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka

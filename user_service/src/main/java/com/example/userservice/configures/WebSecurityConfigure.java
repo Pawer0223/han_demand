@@ -39,11 +39,6 @@ public class WebSecurityConfigure extends WebSecurityConfigurerAdapter {
         return new JwtAuthenticationProvider(userService);
     }
 
-    @Override
-    public void configure(WebSecurity web) {
-        web.ignoring().antMatchers("/webjars/**", "/static/**", "/templates/**", "/h2/**");
-    }
-
     @Autowired
     public void configureAuthentication(AuthenticationManagerBuilder builder, JwtAuthenticationProvider authenticationProvider) {
         builder.authenticationProvider(authenticationProvider);
@@ -58,6 +53,11 @@ public class WebSecurityConfigure extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Override
+    public void configure(WebSecurity web) {
+        web.ignoring().antMatchers("/webjars/**", "/static/**", "/templates/**", "/h2/**");
     }
 
     @Override
