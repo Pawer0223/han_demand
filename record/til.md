@@ -145,5 +145,16 @@
       </td>
       <td><a target='_blank' href=""></a></td>
     </tr>
+    <tr>
+      <td>2021.02.22 ~ 02.27</td>
+      <td>
+        코딩테스트, 면접, 과제전형
+      </td>
+      <td></td>
+      <td>
+        진도를 못나감
+      </td>
+      <td><a target='_blank' href=""></a></td>
+    </tr>
   </table>
 </details>
