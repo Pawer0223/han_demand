@@ -158,3 +158,17 @@
     </tr>
   </table>
 </details>
+
+<details>
+<summary>week 3</summary>
+  <table>
+    <th>Day</th><th>Content</th><th>Keyword</th><th>Why?</th><th>Trace</th>
+    <tr>
+      <td>2021.02.28</td>
+      <td>Filter 고민</td>
+      <td>filter</td>
+      <td>로그인 정보 필터링을 apigateway에서, But 에러결과를 공통으로 어떻게 처리할 수 있지..</td>
+      <td><a href=""></a></td>
+    </tr>
+  </table>
+</details>
