@@ -181,6 +181,18 @@
         <li>따라서 인증을 처리하는 서비스를 새롭게 구현할 예정.</li>
         <li>즉, GW에서 검증이 필요한 요청은 Authentication-Service로 redirect한다.</li>
         <li><a href="https://cloud.spring.io/spring-cloud-gateway/reference/html/#the-redirectto-gatewayfilter-factory">참조하자</a></li>
+        <li>취소, JSON응답으로 보내는 방법찾았다. reject된 경우 클라이언트에서 제어하도록 하는게 좋을듯..</li>
+      </td>
+      <td><a href=""></a></td>
+    </tr>
+    <tr>
+      <td>2022.03.02</td>
+      <td>Security 개념다시 잡기</td>
+      <td>SpringSecurity</td>
+      <td>Security JWT발급 코드만 간단히 가져다 쓸려했는데.. 뭐하나 고칠려해도 손을못대겠다..</td>
+      <td>
+        <li>기존 보안검증 코드 지우고, 다시 짜자.</li>
+        <li>Security 강의빨리듣자..</li>
       </td>
       <td><a href=""></a></td>
     </tr>
