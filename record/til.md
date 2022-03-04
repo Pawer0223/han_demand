@@ -196,5 +196,16 @@
       </td>
       <td><a href=""></a></td>
     </tr>
+    <tr>
+      <td>2022.03.03 ~ 03.04</td>
+      <td>JWT 이해하기</td>
+      <td>JWT, HttpBasic, Bearer 토큰</td>
+      <td>JWT 이해하기</td>
+      <td>
+      </td>
+      <td>
+        <a href="https://github.com/Pawer0223/study_codes/tree/main/jwt_understand">링크</a>
+      </td>
+    </tr>
   </table>
 </details>
