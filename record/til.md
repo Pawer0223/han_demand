@@ -207,5 +207,16 @@
         <a href="https://github.com/Pawer0223/study_codes/tree/main/jwt_understand">링크</a>
       </td>
     </tr>
+    <tr>
+      <td>2022.03.05 ~ 03.13</td>
+      <td>다른 과제전형 및 코딩테스트 대비</td>
+      <td>JWT 이해까지 하고, 다른 과제 함</td>
+      <td>진도를 못나감..</td>
+      <td>
+      </td>
+      <td>
+        <a href="https://github.com/Pawer0223/url_parsing_api">링크</a>
+      </td>
+    </tr>
   </table>
 </details>
