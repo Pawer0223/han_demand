@@ -1,9 +1,15 @@
 # han_demand
 - [링크](https://okky.kr/article/423650)
 
-# Software Architecture
-<img width="558" alt="image" src="https://user-images.githubusercontent.com/26343023/154838218-223d7234-6b10-4d95-9afa-099bc8021993.png">
+# 실행 순서
+1. Discovery-Service
+2. Gateway-Service
+3. User-Service
+4. Chatting-Service
+5. Chatting-UI
 
+# Software Architecture
+![architecture](img/architecture.png)
 # Work-Flow
 - 모든 클라이언트의 요청은 API-Gateway에서 받는다.
 - API-Gateway는 Discovery-Service를 조회하여 마이크로 서비스의 위치를 찾아 요청한다.
