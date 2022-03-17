@@ -1,4 +1,4 @@
-package com.cos.chatapp;
+package com.handemand.chattingservice.domain;
 
 import java.time.LocalDateTime;
 
@@ -6,8 +6,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
-
-//STS 툴에 lombok 설정하는 법 (인터넷)
 
 @Data
 @Document(collection = "chat")

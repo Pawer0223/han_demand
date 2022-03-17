@@ -1,7 +1,9 @@
-package com.cos.chatapp;
+package com.handemand.chattingservice.controller;
 
 import java.time.LocalDateTime;
 
+import com.handemand.chattingservice.domain.Chat;
+import com.handemand.chattingservice.repository.ChatRepository;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +32,7 @@ public class ChatController {
 	}
 	
 	@CrossOrigin
-	@GetMapping(value = "/chat/roomNum/{roomNum}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+	@GetMapping(value = "/roomNum/{roomNum}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 	public Flux<Chat> findByRoomNum(@PathVariable Integer roomNum) {
 		return chatRepository.mFindByRoomNum(roomNum)
 				.subscribeOn(Schedulers.boundedElastic());

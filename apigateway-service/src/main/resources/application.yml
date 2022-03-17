@@ -23,17 +23,15 @@ spring:
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
-            - Path=/user-service/login, /user-service/test #login 토큰검사 안함
-            # - Method=POST
-          filters:
-            - RemoveRequestHeader=Cookie #post 전달 되는 값은 매번 새로운 데이터처럼 인식하기 위해
-            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
-        - id: user-service
-          uri: lb://USER-SERVICE
-          predicates:
-            - Path=/user-servic/**
+            - Path=/user-service/**
             - Method=GET
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/user-servic/(?<segment>.*), /$\{segment}
-            - AuthorizationHeaderFilter
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+        - id: chatting-service
+          uri: lb://CHATTING-SERVICE
+          predicates:
+            - Path=/chatting-service/**
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/chatting-service/(?<segment>.*), /$\{segment}
