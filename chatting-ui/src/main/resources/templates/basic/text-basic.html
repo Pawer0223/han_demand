@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>데이터 출력 기본</h1>
+<ul>
+    <li>th:text 사용 <span th:text="${data}"></span></li>
+    <li>컨텐츠 안에서 직접 출력하기 = [[${data}]]</li>
+</ul>
+
+<h1>text vs utext, 태그처리 가능하도록</h1>
+<ul>
+    <li>th:text = <span th:text="${data}"></span></li>
+    <li>th:utext = <span th:utext="${data}"></span></li>
+</ul>
+
+</body>
+</html>
