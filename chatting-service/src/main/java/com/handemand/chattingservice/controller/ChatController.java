@@ -1,7 +1,9 @@
-package com.cos.chatapp;
+package com.handemand.chattingservice.controller;
 
 import java.time.LocalDateTime;
 
+import com.handemand.chattingservice.domain.Chat;
+import com.handemand.chattingservice.repository.ChatRepository;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +18,7 @@ import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;
 
 @RequiredArgsConstructor
-@RestController // 데이터 리턴 서버
+@RestController
 public class ChatController {
 
 	private final ChatRepository chatRepository;
@@ -30,7 +32,7 @@ public class ChatController {
 	}
 	
 	@CrossOrigin
-	@GetMapping(value = "/chat/roomNum/{roomNum}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+	@GetMapping(value = "/roomNum/{roomNum}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 	public Flux<Chat> findByRoomNum(@PathVariable Integer roomNum) {
 		return chatRepository.mFindByRoomNum(roomNum)
 				.subscribeOn(Schedulers.boundedElastic());
@@ -40,6 +42,6 @@ public class ChatController {
 	@PostMapping("/chat") 
 	public Mono<Chat> setMsg(@RequestBody Chat chat){
 		chat.setCreatedAt(LocalDateTime.now());
-		return chatRepository.save(chat); // Object를 리턴하면 자동으로 JSON 변환 (MessageConverter)
+		return chatRepository.save(chat);
 	}
 }
