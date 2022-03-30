@@ -1,14 +1,17 @@
 package com.handemand.userservice.config;
 
-import com.handemand.userservice.auth.PrincipalDetails;
 import com.handemand.userservice.auth.PrincipalOauth2UserService;
+import com.handemand.userservice.config.handler.CustomOauthSuccessHandler;
+import com.handemand.userservice.jwt.JwtAuthenticationFilter;
+import com.handemand.userservice.jwt.JwtService;
+import com.handemand.userservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter;
 
 /**
  *  Oauth 2.0
@@ -27,24 +30,35 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final PrincipalOauth2UserService principalOauth2UserService;
+    private final UserRepository userRepository;
+    private final JwtService jwtService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable();
-        http.authorizeRequests()
-            .antMatchers("/user/**").authenticated()
-            .antMatchers("/manager/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')")
-            .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
-            .anyRequest().permitAll()
-            .and()
-            .formLogin()
-            .loginPage("/loginForm")
-            .loginProcessingUrl("/login") // login 호출 시 시큐리티가 처리
-            .defaultSuccessUrl("/")
-            .and()
-            .oauth2Login()
-            .userInfoEndpoint()
-            .userService(principalOauth2UserService)
+        http.cors().and().csrf().disable();
+
+        http.addFilterBefore(new JwtAuthenticationFilter(userRepository, jwtService)
+                , OAuth2AuthorizationRequestRedirectFilter.class)
         ;
+        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
+                .httpBasic().disable()
+                .formLogin().disable()
+        ;
+        // http.addFilterAfter(new JwtAuthenticationFilter(), LogoutFilter.class);
+        http.authorizeRequests()
+                .antMatchers("/user/**").authenticated()
+                .antMatchers("/manager/**").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_MANAGER')")
+                .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
+                .anyRequest().permitAll()
+        ;
+        // oath2
+        http.oauth2Login()
+                .userInfoEndpoint()
+                .userService(principalOauth2UserService)
+                .and()
+                .successHandler(new CustomOauthSuccessHandler(jwtService))
+        ;
+
     }
 }

@@ -1,8 +1,11 @@
 package com.handemand.userservice.controller;
 
+import com.handemand.userservice.auth.PrincipalDetails;
 import com.handemand.userservice.domain.User;
 import com.handemand.userservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +20,22 @@ public class IndexController {
 
     @GetMapping("/")
     public String index() {
+//        if (principalDetail != null) {
+//            User user = principalDetail.getUser();
+//            if (user != null && user.getNickname() == null)
+//                return "redirect:/needNickName";
+//        }
         return "index.html";
     }
 
     @GetMapping("/loginForm")
     public String loginForm() {
         return "loginForm.html";
+    }
+
+    @GetMapping("/needNickName")
+    public String needNickName() {
+        return "needNickName.html";
     }
 
     @GetMapping("/joinForm")
@@ -33,7 +46,7 @@ public class IndexController {
     @PostMapping("join")
     public String join(User user) {
         System.out.println(user);
-        user.setRole("ROLE_USER");
+        user.setRoles("ROLE_USER");
         String encPw = bCryptPasswordEncoder.encode(user.getPassword());
         user.setPassword(encPw);
         userRepository.save(user);

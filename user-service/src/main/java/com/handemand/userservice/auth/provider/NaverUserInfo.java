@@ -2,22 +2,26 @@ package com.handemand.userservice.auth.provider;
 
 import java.util.Map;
 
-public class GoogleUserInfo implements Oauth2UserInfo {
+/**
+ *  로그아웃이 생각보다 번가로와서 일단 사용하지 않음.
+ */
+public class NaverUserInfo implements Oauth2UserInfo {
 
     private Map<String, Object> attributes;
 
-    public GoogleUserInfo(Map<String, Object> attributes) {
-        this.attributes = attributes;
+    public NaverUserInfo(Map<String, Object> attributes) {
+        this.attributes = (Map)attributes.get("response");
     }
 
     @Override
     public String getProviderId() {
-        return (String)attributes.get("sub");
+        return (String)attributes.get("id");
     }
 
     @Override
     public String getProvider() {
-        return ProviderType.GOOGLE.getProvider();
+        return "naver";
+        //return ProviderType.NAVER.getProvider();
     }
 
     @Override
