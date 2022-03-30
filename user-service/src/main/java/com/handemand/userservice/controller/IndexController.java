@@ -20,11 +20,6 @@ public class IndexController {
 
     @GetMapping("/")
     public String index() {
-//        if (principalDetail != null) {
-//            User user = principalDetail.getUser();
-//            if (user != null && user.getNickname() == null)
-//                return "redirect:/needNickName";
-//        }
         return "index.html";
     }
 
