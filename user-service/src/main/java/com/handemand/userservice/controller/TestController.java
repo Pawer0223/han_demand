@@ -1,7 +1,10 @@
 package com.handemand.userservice.controller;
 
 import com.handemand.userservice.auth.PrincipalDetails;
+import com.handemand.userservice.domain.User;
+import com.handemand.userservice.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -12,8 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class TestController {
+
+    private final UserRepository userRepository;
 
     @GetMapping("/user")
     public String user(@AuthenticationPrincipal PrincipalDetails principalDetails) {
@@ -29,6 +34,21 @@ public class TestController {
     @GetMapping("/manager")
     public String manager() {
         return "manager";
+    }
+
+    @GetMapping("/success")
+    public String success() {
+        return "login success";
+    }
+
+    @GetMapping("/updateNickname")
+    public String updateNickname() {
+        return "updateNickname";
+    }
+
+    @GetMapping("/fail")
+    public String fail() {
+        return "login fail";
     }
 
     @GetMapping("/authentication")

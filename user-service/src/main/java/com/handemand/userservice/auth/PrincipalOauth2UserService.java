@@ -1,20 +1,20 @@
 package com.handemand.userservice.auth;
 
-import com.handemand.userservice.auth.provider.GoogleUserInfo;
 import com.handemand.userservice.auth.provider.Oauth2UserInfo;
-import com.handemand.userservice.auth.provider.OauthClient;
+import com.handemand.userservice.auth.provider.ProviderType;
 import com.handemand.userservice.domain.User;
 import com.handemand.userservice.repository.UserRepository;
+import com.handemand.userservice.utils.ProviderTypeUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
+import org.springframework.security.oauth2.core.OAuth2Error;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
-import static com.handemand.userservice.auth.provider.OauthClient.*;
 
 /**
  * [ UserRequest 정보 ]
@@ -39,26 +39,31 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
      * 구글 API를 통해 프로필 정보를 받아온다. (with AccessToken)
      * 중요 포인트.
      * loadUserByUsername 가 종료될 때, @AuthenticationPrincipal 어노테이션이 만들어진다.
+     *
+     * 구글 로그인 폼에서 로그인을 시도했을 때 타는 함수.
      */
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-        // oauth2UserRequestLogging(userRequest);
-        OAuth2User oAuth2User = super.loadUser(userRequest);
-        String provider = userRequest.getClientRegistration().getRegistrationId();
 
-        Oauth2UserInfo oauth2UserInfo = null;
-        if (provider.equals(GOOGLE.getValue())) {
-            oauth2UserInfo = GOOGLE.getOauth2UserInfo(oAuth2User.getAttributes());
+        oauth2UserRequestLogging(userRequest);
+        String provider = userRequest.getClientRegistration().getRegistrationId();
+        ProviderType providerType = ProviderTypeUtil.support(provider);
+
+        if (providerType != null) {
+            OAuth2User oAuth2User = super.loadUser(userRequest);
+            Oauth2UserInfo oauth2UserInfo = providerType.getOauth2UserInfo(oAuth2User.getAttributes());
+            User user = createUserWithOauth(oauth2UserInfo);
+            return new PrincipalDetails(user, oAuth2User.getAttributes());
         } else {
-            log.debug("지원하지 않는 로그인 !");
-            return null;
+            String msg = provider + "는 로그인할 수 없습니다.";
+            log.error(msg);
+            OAuth2Error oAuth2Error = new OAuth2Error("Invalid Provider", msg, "");
+            throw new OAuth2AuthenticationException(oAuth2Error);
         }
-        User user = createUserWithOauth(oauth2UserInfo);
-        return new PrincipalDetails(user, oAuth2User.getAttributes());
     }
 
-    // 메서드 명 마음에 안드는데.. 사실상 찾는기능. 강제로 만드는건 안좋은것 같음.. 바꾸자 !
     private User createUserWithOauth(Oauth2UserInfo oauth2UserInfo) {
+
         String provider = oauth2UserInfo.getProvider();
         String providerId = oauth2UserInfo.getProviderId();
         String username = provider + "_" + providerId;
@@ -67,19 +72,18 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
 
         User user = userRepository.findByUsername(username);
         if (user == null) {
-            log.debug("### ### ### 최초 로그인 - 자동 회원가입 진행 ### ### ###");
+            log.debug("### ### ### 자동 회원가입. ### ### ###");
             user = User.builder()
                     .username(username)
                     .password(password)
                     .email(email)
                     .provider(provider)
                     .providerId(providerId)
-                    .role(DEFAULT_ROLE)
+                    .roles(DEFAULT_ROLE)
                     .build();
             userRepository.save(user);
-        } else {
-            log.debug("### ### ### 로그인 이력 있음 ! ### ### ###");
         }
+        log.debug("### ### ### 가입 된 사용자는 필수 정보 입력 후, 사용 가능 ### ### ###");
         return user;
     }
 
